@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const tools = [
-  { icon: Scissors, label: "Jump Cuts" },
-  { icon: Type, label: "Legendas" },
+  { icon: Scissors, label: "Corte Silêncio", emoji: "✂️" },
+  { icon: Type, label: "Legenda Auto", emoji: "💬" },
+  { icon: Zap, label: "Gerar Gancho", emoji: "🧲" },
   { icon: ZoomIn, label: "Zoom" },
   { icon: Volume2, label: "Auto-Ducking" },
   { icon: Smile, label: "Memes" },
