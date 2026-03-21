@@ -99,4 +99,17 @@
       linear-gradient(90deg, hsl(240 6% 18% / 0.3) 1px, transparent 1px);
     background-size: 60px 60px;
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
 }
