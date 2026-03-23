@@ -193,8 +193,8 @@
     50% { opacity: 1; transform: scale(1.08); }
   }
   @keyframes icon-breathe {
-    0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+    0%, 100% { opacity: 0.85; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.12); }
   }
   @keyframes spin-slow {
     from { transform: rotate(0deg); }
