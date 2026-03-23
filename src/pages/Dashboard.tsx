@@ -158,42 +158,47 @@ const Dashboard = () => {
         </div>
 
         {/* ===== NICHO ESTRATÉGICO ===== */}
-        <div className="px-4">
-          <div className="flex items-center justify-between mb-3">
+        <div>
+          <div className="flex items-center justify-between mb-3 px-4">
             <h2 className="text-xs md:text-sm font-black tracking-[0.12em] uppercase font-heading text-white/80">
               Nicho Estratégico
             </h2>
-            <ChevronRight className="w-4 h-4 text-white/20" />
+            <span className="text-[8px] text-white/30 uppercase tracking-wider flex items-center gap-1">
+              Arraste para ver mais <ChevronRight className="w-3 h-3" />
+            </span>
           </div>
 
-          <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+          <div
+            className="flex gap-3 overflow-x-auto pb-4 pl-4 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+          >
             {nicheCards.map((card) => (
               <Link
                 to="/editor"
                 key={card.title}
-                className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-400 hover:scale-[1.03] group snap-start flex-shrink-0"
+                className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] group snap-start"
                 style={{
-                  width: "180px",
-                  minHeight: "220px",
-                  border: "1px solid rgba(139,92,246,0.15)",
-                  boxShadow: "0 4px 24px rgba(0,0,0,0.4)"
+                  minWidth: "160px",
+                  width: "160px",
+                  height: "200px",
+                  flexShrink: 0,
+                  border: "1px solid rgba(139,92,246,0.2)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.4), 0 0 15px rgba(139,92,246,0.08)"
                 }}
               >
-                {/* Background image */}
                 <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 transition-all" />
-                {/* Neon border glow on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: "inset 0 0 20px rgba(139,92,246,0.2), 0 0 20px rgba(139,92,246,0.15)" }} />
-                {/* Content */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: "inset 0 0 20px rgba(139,92,246,0.3), 0 0 25px rgba(139,92,246,0.2)" }} />
                 <div className="relative z-10 h-full flex flex-col justify-end p-3">
-                  <h3 className="text-[10px] font-black text-white uppercase tracking-wider mb-1 font-heading" style={{ textShadow: "0 0 10px rgba(139,92,246,0.4)" }}>
+                  <h3 className="text-[10px] font-black text-white uppercase tracking-wider mb-1 font-heading" style={{ textShadow: "0 0 10px rgba(139,92,246,0.5)" }}>
                     {card.title}
                   </h3>
-                  <p className="text-[8px] text-white/50 leading-relaxed font-medium">{card.subtitle}</p>
+                  <p className="text-[7px] text-white/50 leading-relaxed font-medium">{card.subtitle}</p>
                 </div>
               </Link>
             ))}
+            {/* Spacer for last card visibility */}
+            <div style={{ minWidth: "16px", flexShrink: 0 }} />
           </div>
         </div>
       </div>
