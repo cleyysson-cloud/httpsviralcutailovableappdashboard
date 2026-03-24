@@ -66,41 +66,41 @@ const Dashboard = () => {
         <div className="px-3 mb-4">
           <div className="grid grid-cols-3 gap-2 md:gap-3">
             {/* ANTES - FRUSTRAÇÃO */}
-            <div className="relative rounded-2xl overflow-hidden group" style={{ border: "1px solid rgba(239,68,68,0.2)" }}>
-              <img src={antesFrustration} alt="Antes - Frustração" className="w-full h-32 md:h-44 object-cover brightness-75 saturate-50" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="relative rounded-2xl overflow-hidden group" style={{ border: "none", background: "transparent" }}>
+              <img src={antesFrustration} alt="Antes - Frustração" className="w-full h-32 md:h-44 object-cover brightness-75 saturate-50" style={{ maskImage: "linear-gradient(to bottom, black 40%, transparent 100%), linear-gradient(to right, black 50%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 100%), linear-gradient(to right, black 50%, transparent 100%)", maskComposite: "intersect", WebkitMaskComposite: "destination-in" as any }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute top-2 left-2">
-                <span className="text-[9px] md:text-xs font-black tracking-widest uppercase text-red-400 block" style={{ textShadow: "0 0 10px rgba(239,68,68,0.5)" }}>ANTES</span>
-                <span className="text-[8px] md:text-[10px] font-bold text-red-300/70 uppercase tracking-wider">Frustração</span>
+                <span className="text-xs md:text-base font-extrabold tracking-widest uppercase text-red-400 block" style={{ textShadow: "0 0 12px rgba(239,68,68,0.7), 0 2px 4px rgba(0,0,0,0.8)" }}>ANTES</span>
+                <span className="text-[10px] md:text-xs font-extrabold text-red-300/90 uppercase tracking-wider" style={{ textShadow: "0 0 8px rgba(239,68,68,0.5), 0 2px 4px rgba(0,0,0,0.8)" }}>Frustração</span>
               </div>
               <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-[8px] md:text-[10px] font-bold text-white/60 uppercase tracking-wide">Complexo e Demorado</p>
+                <p className="text-[9px] md:text-[11px] font-bold text-white/80 uppercase tracking-wide" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>Complexo e Demorado</p>
               </div>
             </div>
 
             {/* DEPOIS - SUCESSO (center) */}
-            <div className="relative rounded-2xl overflow-hidden group" style={{ border: "1px solid rgba(16,185,129,0.3)" }}>
-              <img src={depoisSucesso} alt="Depois - Sucesso" className="w-full h-32 md:h-44 object-cover brightness-110 saturate-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="relative rounded-2xl overflow-hidden group" style={{ border: "none", background: "transparent" }}>
+              <img src={depoisSucesso} alt="Depois - Sucesso" className="w-full h-32 md:h-44 object-cover brightness-110 saturate-110" style={{ maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)" }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute top-2 left-2">
-                <span className="text-[9px] md:text-xs font-black tracking-widest uppercase text-emerald-400 block" style={{ textShadow: "0 0 10px rgba(16,185,129,0.5)" }}>DEPOIS</span>
-                <span className="text-[8px] md:text-[10px] font-bold text-emerald-300/70 uppercase tracking-wider">Sucesso</span>
+                <span className="text-xs md:text-base font-extrabold tracking-widest uppercase text-emerald-400 block" style={{ textShadow: "0 0 12px rgba(16,185,129,0.7), 0 2px 4px rgba(0,0,0,0.8)" }}>DEPOIS</span>
+                <span className="text-[10px] md:text-xs font-extrabold text-emerald-300/90 uppercase tracking-wider" style={{ textShadow: "0 0 8px rgba(16,185,129,0.5), 0 2px 4px rgba(0,0,0,0.8)" }}>Sucesso</span>
               </div>
               <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-[8px] md:text-[10px] font-bold text-white/80 uppercase tracking-wide">Rápido e Viral</p>
+                <p className="text-[9px] md:text-[11px] font-bold text-white/90 uppercase tracking-wide" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>Rápido e Viral</p>
               </div>
             </div>
 
             {/* DEPOIS - SUCESSO (family) */}
-            <div className="relative rounded-2xl overflow-hidden group" style={{ border: "1px solid rgba(168,85,247,0.3)" }}>
-              <img src={depoisFamilia} alt="Depois - Família" className="w-full h-32 md:h-44 object-cover brightness-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="relative rounded-2xl overflow-hidden group" style={{ border: "none", background: "transparent" }}>
+              <img src={depoisFamilia} alt="Depois - Família" className="w-full h-32 md:h-44 object-cover brightness-110" style={{ maskImage: "linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to left, black 50%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to left, black 50%, transparent 100%)", maskComposite: "intersect", WebkitMaskComposite: "destination-in" as any }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute top-2 left-2">
-                <span className="text-[9px] md:text-xs font-black tracking-widest uppercase text-purple-400 block" style={{ textShadow: "0 0 10px rgba(168,85,247,0.5)" }}>DEPOIS</span>
-                <span className="text-[8px] md:text-[10px] font-bold text-purple-300/70 uppercase tracking-wider">Sucesso</span>
+                <span className="text-xs md:text-base font-extrabold tracking-widest uppercase text-purple-400 block" style={{ textShadow: "0 0 12px rgba(168,85,247,0.7), 0 2px 4px rgba(0,0,0,0.8)" }}>DEPOIS</span>
+                <span className="text-[10px] md:text-xs font-extrabold text-purple-300/90 uppercase tracking-wider" style={{ textShadow: "0 0 8px rgba(168,85,247,0.5), 0 2px 4px rgba(0,0,0,0.8)" }}>Sucesso</span>
               </div>
               <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-[8px] md:text-[10px] font-bold text-white/80 uppercase tracking-wide">Autoridade Total</p>
+                <p className="text-[9px] md:text-[11px] font-bold text-white/90 uppercase tracking-wide" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>Autoridade Total</p>
               </div>
             </div>
           </div>
