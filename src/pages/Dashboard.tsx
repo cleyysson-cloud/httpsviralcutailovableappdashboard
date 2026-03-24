@@ -27,8 +27,8 @@ const nicheCards = [
   { title: "SAÚDE & FITNESS", subtitle: "Scanner de Macros & Calorias | Contador de Repetições | Performance Stats", image: nicheFitness },
   { title: "MOTO & AUTO", subtitle: "Telemetria de Game | Motion Blur | Análise de Aceleração", image: nicheMoto },
   { title: "GASTRONOMIA", subtitle: "Close-ups Automáticos | Cor Vibrante | Receitas Dinâmicas", image: nicheGastro },
-  { title: "EDUCAÇÃO", subtitle: "Quadro Inteligente | Slides Animados | Resumos com IA", image: nicheEducacao },
-  { title: "MÚSICA & DJ", subtitle: "Waveform Visual | Beat Drop Sync | Transições Rítmicas", image: nicheMusica },
+  { title: "CAPAS DE VÍDEOS", subtitle: "Thumbnails com IA | Design Automático | CTR Otimizado", image: nicheEducacao },
+  { title: "MODA & BELEZA", subtitle: "Looks Dinâmicos | Color Grading | Transições Suaves", image: nicheMusica },
 ];
 
 const Dashboard = () => {
