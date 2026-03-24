@@ -36,11 +36,18 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen text-white relative overflow-x-hidden" style={{ background: "#050505" }}>
-      {/* Ambient glow */}
+      {/* Ambient glow - vibrant neon atmosphere */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full opacity-30" style={{ background: "radial-gradient(ellipse, rgba(139,92,246,0.25) 0%, rgba(6,182,212,0.08) 50%, transparent 70%)" }} />
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%)" }} />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, rgba(236,72,153,0.15) 0%, transparent 70%)" }} />
+        {/* Top center large purple/cyan glow */}
+        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[1200px] h-[800px] rounded-full opacity-50" style={{ background: "radial-gradient(ellipse, rgba(139,92,246,0.4) 0%, rgba(168,85,247,0.2) 30%, rgba(6,182,212,0.08) 55%, transparent 75%)" }} />
+        {/* Left pink/magenta neon strip */}
+        <div className="absolute top-0 left-[-100px] w-[500px] h-[600px] rounded-full opacity-40" style={{ background: "radial-gradient(ellipse at 30% 40%, rgba(236,72,153,0.35) 0%, rgba(168,85,247,0.2) 40%, transparent 70%)" }} />
+        {/* Right pink/purple neon strip */}
+        <div className="absolute top-0 right-[-100px] w-[500px] h-[600px] rounded-full opacity-40" style={{ background: "radial-gradient(ellipse at 70% 40%, rgba(236,72,153,0.3) 0%, rgba(139,92,246,0.2) 40%, transparent 70%)" }} />
+        {/* Center cyan accent */}
+        <div className="absolute top-[200px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, rgba(6,182,212,0.3) 0%, transparent 60%)" }} />
+        {/* Bottom subtle purple wash */}
+        <div className="absolute bottom-0 left-0 right-0 h-[300px] opacity-30" style={{ background: "linear-gradient(to top, rgba(139,92,246,0.15) 0%, transparent 100%)" }} />
       </div>
 
       <div className="relative z-10 pb-28">
