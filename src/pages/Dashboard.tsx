@@ -38,8 +38,8 @@ const Dashboard = () => {
     <div className="min-h-screen text-white relative overflow-x-hidden" style={{ background: "#050505" }}>
       {/* Background image layer */}
       <div className="fixed inset-0 z-0">
-        <img src="/images/bg-dashboard.jpg" alt="" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.7) 50%, rgba(5,5,5,0.95) 100%)" }} />
+        <img src="/images/bg-dashboard.jpg" alt="" className="w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.3) 50%, rgba(5,5,5,0.7) 100%)" }} />
       </div>
       {/* Ambient neon glow on top of bg */}
       <div className="fixed inset-0 pointer-events-none z-[1]">
