@@ -14,9 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Orbitron', 'sans-serif'],
-        heading: ['Rajdhani', 'sans-serif'],
-        body: ['Space Grotesk', 'sans-serif'],
+        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,12 +52,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: {
-          purple: "hsl(var(--neon-purple))",
-          cyan: "hsl(var(--neon-cyan))",
           green: "hsl(var(--neon-green))",
-          yellow: "hsl(var(--neon-yellow))",
-          blue: "hsl(var(--neon-blue))",
-          red: "hsl(var(--neon-red))",
+          pink: "hsl(var(--neon-pink))",
+          purple: "hsl(var(--neon-purple))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -85,10 +81,20 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "pulse-neon": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.6" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-neon": "pulse-neon 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
