@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Home, FolderOpen, TrendingUp, User, Zap, Upload, FileText, Search, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ProjetosTab from "@/components/tabs/ProjetosTab";
+import TendenciasTab from "@/components/tabs/TendenciasTab";
+import PerfilTab from "@/components/tabs/PerfilTab";
 
 // Images
 import antesFrustration from "@/assets/antes-frustration.jpg";
