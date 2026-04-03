@@ -206,4 +206,33 @@
   .animate-spin-reverse {
     animation: spin-slow 12s linear infinite reverse;
   }
+
+
+  /* Podcast orange theme animations */
+  @keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 8px hsl(24 100% 55% / 0.6)); }
+    50% { filter: drop-shadow(0 0 24px hsl(24 100% 55% / 1)); }
+  }
+
+  @keyframes data-flow {
+    0% { stroke-dashoffset: 40; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  @keyframes float-plus {
+    0%, 100% { opacity: 0.08; transform: translateY(0); }
+    50% { opacity: 0.15; transform: translateY(-8px); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-data-flow {
+    animation: data-flow 1.5s linear infinite;
+  }
+
+  .animate-float-plus {
+    animation: float-plus 4s ease-in-out infinite;
+  }
 }
