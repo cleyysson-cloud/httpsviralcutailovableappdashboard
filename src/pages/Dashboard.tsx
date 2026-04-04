@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Home, FolderOpen, TrendingUp, User, Zap, Upload, FileText, Search, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
+import { Home, FolderOpen, TrendingUp, User, Zap, Upload, FileText, Search, ChevronRight, X } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import ProjetosTab from "@/components/tabs/ProjetosTab";
 import TendenciasTab from "@/components/tabs/TendenciasTab";
 import PerfilTab from "@/components/tabs/PerfilTab";
@@ -36,6 +36,21 @@ const nicheCards = [
 
 const Dashboard = () => {
   const [activeNav, setActiveNav] = useState("home");
+  const [showUploadModal, setShowUploadModal] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Store file reference and navigate to editor
+      const url = URL.createObjectURL(file);
+      sessionStorage.setItem("pendingVideoUrl", url);
+      sessionStorage.setItem("pendingVideoName", file.name);
+      setShowUploadModal(false);
+      navigate("/editor");
+    }
+  };
 
   return (
     <div className="min-h-screen text-white relative overflow-x-hidden" style={{ background: "#050505" }}>
@@ -136,18 +151,18 @@ const Dashboard = () => {
               </div>
 
               <div className="flex gap-2 w-full max-w-sm mb-3">
-                <Link to="/editor" className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
+                <button onClick={() => setShowUploadModal(true)} className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
                   <Upload className="w-3.5 h-3.5" />
                   Carregar Vídeo Completo (IA Analysis)
-                </Link>
-                <Link to="/editor" className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
+                </button>
+                <button onClick={() => navigate("/editor")} className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
                   <FileText className="w-3.5 h-3.5" />
                   Gerar por Roteiro Master
-                </Link>
+                </button>
               </div>
 
-              <Link
-                to="/editor"
+              <button
+                onClick={() => setShowUploadModal(true)}
                 className="w-full max-w-sm text-center text-xs font-black uppercase tracking-[0.12em] py-3.5 rounded-2xl transition-all duration-300 block"
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,240,240,0.9))",
@@ -159,7 +174,7 @@ const Dashboard = () => {
                   <Zap className="w-4 h-4" />
                   Criar Novo Vídeo de Autoridade
                 </span>
-              </Link>
+              </button>
             </div>
 
             {/* ===== NICHO ESTRATÉGICO ===== */}
@@ -178,8 +193,7 @@ const Dashboard = () => {
                 style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
               >
                 {nicheCards.map((card) => (
-                  <Link
-                    to="/editor"
+                  <div
                     key={card.title}
                     className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] group snap-start"
                     style={{
@@ -200,7 +214,7 @@ const Dashboard = () => {
                       </h3>
                       <p className="text-[7px] text-white/50 leading-relaxed font-medium">{card.subtitle}</p>
                     </div>
-                  </Link>
+                  </div>
                 ))}
                 <div style={{ minWidth: "16px", flexShrink: 0 }} />
               </div>
@@ -238,6 +252,40 @@ const Dashboard = () => {
           ))}
         </div>
       </nav>
+
+      {/* ===== UPLOAD MODAL ===== */}
+      {showUploadModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center" style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(12px)" }}>
+          <div className="relative w-[90%] max-w-lg rounded-2xl p-6" style={{ background: "rgba(15,15,15,0.95)", border: "1px solid rgba(139,92,246,0.3)", boxShadow: "0 0 60px rgba(139,92,246,0.15)" }}>
+            <button
+              onClick={() => setShowUploadModal(false)}
+              className="absolute top-3 right-3 text-white/40 hover:text-white transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <h2 className="text-sm font-black uppercase tracking-[0.12em] text-white/90 mb-1 font-heading">Criar Novo Vídeo</h2>
+            <p className="text-[10px] text-white/40 mb-5">Selecione ou arraste seu vídeo para começar a edição com IA</p>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="w-full aspect-video rounded-xl border-2 border-dashed border-purple-500/30 hover:border-purple-400/60 flex flex-col items-center justify-center gap-3 transition-all cursor-pointer"
+              style={{ background: "rgba(139,92,246,0.05)" }}
+            >
+              <Upload className="h-10 w-10 text-purple-400/60" />
+              <div className="text-center">
+                <p className="text-xs font-bold text-white/70">Arraste ou clique para enviar</p>
+                <p className="text-[10px] text-white/30 mt-1">MP4, MOV, AVI — até 500MB</p>
+              </div>
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="video/*"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
