@@ -36,6 +36,21 @@ const nicheCards = [
 
 const Dashboard = () => {
   const [activeNav, setActiveNav] = useState("home");
+  const [showUploadModal, setShowUploadModal] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Store file reference and navigate to editor
+      const url = URL.createObjectURL(file);
+      sessionStorage.setItem("pendingVideoUrl", url);
+      sessionStorage.setItem("pendingVideoName", file.name);
+      setShowUploadModal(false);
+      navigate("/editor");
+    }
+  };
 
   return (
     <div className="min-h-screen text-white relative overflow-x-hidden" style={{ background: "#050505" }}>
