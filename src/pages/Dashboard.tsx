@@ -193,8 +193,7 @@ const Dashboard = () => {
                 style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
               >
                 {nicheCards.map((card) => (
-                  <Link
-                    to="/editor"
+                  <div
                     key={card.title}
                     className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] group snap-start"
                     style={{
@@ -215,7 +214,7 @@ const Dashboard = () => {
                       </h3>
                       <p className="text-[7px] text-white/50 leading-relaxed font-medium">{card.subtitle}</p>
                     </div>
-                  </Link>
+                  </div>
                 ))}
                 <div style={{ minWidth: "16px", flexShrink: 0 }} />
               </div>
