@@ -22,16 +22,16 @@ import nicheEducacao from "@/assets/niche-educacao.jpg";
 import nicheMusica from "@/assets/niche-musica.jpg";
 
 const nicheCards = [
-  { title: "A BASE", subtitle: "Cortes Rápidos & Jump Cuts | Legendas Dinâmicas | Beat Sync", image: nicheBase },
-  { title: "PODCAST & CORTES", subtitle: "Multicam Inteligente | Destaque de Voz | Sincronização", image: nichePodcast },
-  { title: "FINANÇAS & FIIs", subtitle: "Tickers em Tempo Real | Gráficos Neon | Ativos de Valor", image: nicheFinancas },
-  { title: "GAMER & TECH", subtitle: "Gameplay Integrado | Realce de FPS & RGB | Beat Sync", image: nicheGamer },
-  { title: "LIFESTYLE & VLOG", subtitle: "Direção Semântica por Prompt | Zoom Suave | Estética Clean", image: nicheLifestyle },
-  { title: "SAÚDE & FITNESS", subtitle: "Scanner de Macros & Calorias | Contador de Repetições | Performance Stats", image: nicheFitness },
-  { title: "MOTO & AUTO", subtitle: "Telemetria de Game | Motion Blur | Análise de Aceleração", image: nicheMoto },
-  { title: "GASTRONOMIA", subtitle: "Close-ups Automáticos | Cor Vibrante | Receitas Dinâmicas", image: nicheGastro },
-  { title: "CAPAS DE VÍDEOS", subtitle: "Thumbnails com IA | Design Automático | CTR Otimizado", image: nicheEducacao },
-  { title: "MODA & BELEZA", subtitle: "Looks Dinâmicos | Color Grading | Transições Suaves", image: nicheMusica },
+  { title: "A BASE", subtitle: "Cortes Rápidos & Jump Cuts | Legendas Dinâmicas | Beat Sync", image: nicheBase, route: "/editor" },
+  { title: "PODCAST & CORTES", subtitle: "Multicam Inteligente | Destaque de Voz | Sincronização", image: nichePodcast, route: "/podcast" },
+  { title: "FINANÇAS & FIIs", subtitle: "Tickers em Tempo Real | Gráficos Neon | Ativos de Valor", image: nicheFinancas, route: "/editor" },
+  { title: "GAMER & TECH", subtitle: "Gameplay Integrado | Realce de FPS & RGB | Beat Sync", image: nicheGamer, route: "/editor" },
+  { title: "LIFESTYLE & VLOG", subtitle: "Direção Semântica por Prompt | Zoom Suave | Estética Clean", image: nicheLifestyle, route: "/editor" },
+  { title: "SAÚDE & FITNESS", subtitle: "Scanner de Macros & Calorias | Contador de Repetições | Performance Stats", image: nicheFitness, route: "/editor" },
+  { title: "MOTO & AUTO", subtitle: "Telemetria de Game | Motion Blur | Análise de Aceleração", image: nicheMoto, route: "/editor" },
+  { title: "GASTRONOMIA", subtitle: "Close-ups Automáticos | Cor Vibrante | Receitas Dinâmicas", image: nicheGastro, route: "/editor" },
+  { title: "CAPAS DE VÍDEOS", subtitle: "Thumbnails com IA | Design Automático | CTR Otimizado", image: nicheEducacao, route: "/editor" },
+  { title: "MODA & BELEZA", subtitle: "Looks Dinâmicos | Color Grading | Transições Suaves", image: nicheMusica, route: "/editor" },
 ];
 
 const Dashboard = () => {
@@ -195,7 +195,8 @@ const Dashboard = () => {
                 {nicheCards.map((card) => (
                   <div
                     key={card.title}
-                    className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] group snap-start"
+                    onClick={() => navigate(card.route)}
+                    className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group snap-start"
                     style={{
                       minWidth: "160px",
                       width: "160px",
