@@ -151,18 +151,18 @@ const Dashboard = () => {
               </div>
 
               <div className="flex gap-2 w-full max-w-sm mb-3">
-                <Link to="/editor" className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
+                <button onClick={() => setShowUploadModal(true)} className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
                   <Upload className="w-3.5 h-3.5" />
                   Carregar Vídeo Completo (IA Analysis)
-                </Link>
-                <Link to="/editor" className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
+                </button>
+                <button onClick={() => navigate("/editor")} className="flex-1 flex items-center justify-center gap-1.5 text-[9px] font-bold py-2.5 rounded-xl tracking-wide text-white/50 hover:text-white/90 transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(8px)" }}>
                   <FileText className="w-3.5 h-3.5" />
                   Gerar por Roteiro Master
-                </Link>
+                </button>
               </div>
 
-              <Link
-                to="/editor"
+              <button
+                onClick={() => setShowUploadModal(true)}
                 className="w-full max-w-sm text-center text-xs font-black uppercase tracking-[0.12em] py-3.5 rounded-2xl transition-all duration-300 block"
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,240,240,0.9))",
@@ -174,7 +174,7 @@ const Dashboard = () => {
                   <Zap className="w-4 h-4" />
                   Criar Novo Vídeo de Autoridade
                 </span>
-              </Link>
+              </button>
             </div>
 
             {/* ===== NICHO ESTRATÉGICO ===== */}
