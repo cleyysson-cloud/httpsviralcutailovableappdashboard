@@ -195,7 +195,8 @@ const Dashboard = () => {
                 {nicheCards.map((card) => (
                   <div
                     key={card.title}
-                    className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] group snap-start"
+                    onClick={() => navigate(card.route)}
+                    className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group snap-start"
                     style={{
                       minWidth: "160px",
                       width: "160px",
