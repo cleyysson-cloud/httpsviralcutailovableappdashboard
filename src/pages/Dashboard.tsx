@@ -252,6 +252,40 @@ const Dashboard = () => {
           ))}
         </div>
       </nav>
+
+      {/* ===== UPLOAD MODAL ===== */}
+      {showUploadModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center" style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(12px)" }}>
+          <div className="relative w-[90%] max-w-lg rounded-2xl p-6" style={{ background: "rgba(15,15,15,0.95)", border: "1px solid rgba(139,92,246,0.3)", boxShadow: "0 0 60px rgba(139,92,246,0.15)" }}>
+            <button
+              onClick={() => setShowUploadModal(false)}
+              className="absolute top-3 right-3 text-white/40 hover:text-white transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <h2 className="text-sm font-black uppercase tracking-[0.12em] text-white/90 mb-1 font-heading">Criar Novo Vídeo</h2>
+            <p className="text-[10px] text-white/40 mb-5">Selecione ou arraste seu vídeo para começar a edição com IA</p>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="w-full aspect-video rounded-xl border-2 border-dashed border-purple-500/30 hover:border-purple-400/60 flex flex-col items-center justify-center gap-3 transition-all cursor-pointer"
+              style={{ background: "rgba(139,92,246,0.05)" }}
+            >
+              <Upload className="h-10 w-10 text-purple-400/60" />
+              <div className="text-center">
+                <p className="text-xs font-bold text-white/70">Arraste ou clique para enviar</p>
+                <p className="text-[10px] text-white/30 mt-1">MP4, MOV, AVI — até 500MB</p>
+              </div>
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="video/*"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
