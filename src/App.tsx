@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard.tsx";
 import Editor from "./pages/Editor.tsx";
 import Index from "./pages/Index.tsx";
 import Financas from "./pages/Financas.tsx";
+import Fitness from "./pages/Fitness.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Dashboard />} />
           <Route path="/podcast" element={<Index />} />
           <Route path="/financas" element={<Financas />} />
+          <Route path="/fitness" element={<Fitness />} />
           <Route path="/editor" element={<Editor />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
