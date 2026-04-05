@@ -273,4 +273,28 @@
   .animate-spark-rotate {
     animation: spark-rotate 4s linear infinite;
   }
+
+  /* Fitness Cyborg theme animations */
+  @keyframes circuit-trace {
+    0% { stroke-dashoffset: 1000; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  @keyframes hex-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+
+  @keyframes scan-line {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .animate-hex-glow {
+    animation: hex-glow 3s ease-in-out infinite;
+  }
+
+  .animate-scan-line {
+    animation: scan-line 8s linear infinite;
+  }
 }
