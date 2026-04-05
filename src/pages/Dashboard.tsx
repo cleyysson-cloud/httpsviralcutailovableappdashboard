@@ -24,7 +24,7 @@ import nicheMusica from "@/assets/niche-musica.jpg";
 const nicheCards = [
   { title: "A BASE", subtitle: "Cortes Rápidos & Jump Cuts | Legendas Dinâmicas | Beat Sync", image: nicheBase, route: "/editor" },
   { title: "PODCAST & CORTES", subtitle: "Multicam Inteligente | Destaque de Voz | Sincronização", image: nichePodcast, route: "/podcast" },
-  { title: "FINANÇAS & FIIs", subtitle: "Tickers em Tempo Real | Gráficos Neon | Ativos de Valor", image: nicheFinancas, route: "/editor" },
+  { title: "FINANÇAS & FIIs", subtitle: "Tickers em Tempo Real | Gráficos Neon | Ativos de Valor", image: nicheFinancas, route: "/financas" },
   { title: "GAMER & TECH", subtitle: "Gameplay Integrado | Realce de FPS & RGB | Beat Sync", image: nicheGamer, route: "/editor" },
   { title: "LIFESTYLE & VLOG", subtitle: "Direção Semântica por Prompt | Zoom Suave | Estética Clean", image: nicheLifestyle, route: "/editor" },
   { title: "SAÚDE & FITNESS", subtitle: "Scanner de Macros & Calorias | Contador de Repetições | Performance Stats", image: nicheFitness, route: "/editor" },
