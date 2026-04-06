@@ -29,7 +29,7 @@ const nicheCards = [
   { title: "LIFESTYLE & VLOG", subtitle: "Direção Semântica por Prompt | Zoom Suave | Estética Clean", image: nicheLifestyle, route: "/editor" },
   { title: "SAÚDE & FITNESS", subtitle: "Scanner de Macros & Calorias | Contador de Repetições | Performance Stats", image: nicheFitness, route: "/fitness" },
   { title: "MOTO & AUTO", subtitle: "Telemetria de Game | Motion Blur | Análise de Aceleração", image: nicheMoto, route: "/editor" },
-  { title: "GASTRONOMIA", subtitle: "Close-ups Automáticos | Cor Vibrante | Receitas Dinâmicas", image: nicheGastro, route: "/editor" },
+  { title: "GASTRONOMIA", subtitle: "Close-ups Automáticos | Cor Vibrante | Receitas Dinâmicas", image: nicheGastro, route: "/gastronomia" },
   { title: "CAPAS DE VÍDEOS", subtitle: "Thumbnails com IA | Design Automático | CTR Otimizado", image: nicheEducacao, route: "/editor" },
   { title: "MODA & BELEZA", subtitle: "Looks Dinâmicos | Color Grading | Transições Suaves", image: nicheMusica, route: "/editor" },
 ];
