@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Zap, Link, ArrowLeft } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
+import { Zap, Link, X } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
