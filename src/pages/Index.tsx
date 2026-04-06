@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Zap, Link, ArrowLeft } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
+import { Zap, Link, X } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import podcastHost from "@/assets/podcast-host.png";
 
 const Index = () => {
-  const navigate = useNavigate();
   const [clipCount, setClipCount] = useState([10]);
   const [podcastLink, setPodcastLink] = useState("");
 
@@ -61,19 +60,6 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      {/* Botão Voltar */}
-      <button
-        onClick={() => navigate("/dashboard")}
-        className="absolute top-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold tracking-wider uppercase transition-all hover:scale-105 active:scale-95"
-        style={{
-          background: "hsl(0 0% 12%)",
-          color: "hsl(24 100% 55%)",
-          border: "1px solid hsl(24 60% 25%)",
-        }}
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Voltar
-      </button>
 
       <header className="relative z-10 pt-8 pb-4 text-center">
         <h1 className="text-3xl md:text-4xl font-black tracking-wider" style={{ color: "hsl(24 100% 55%)" }}>
@@ -176,6 +162,43 @@ const Index = () => {
           </div>
         </div>
       </main>
+      {/* Bottom bar */}
+      <footer
+        className="fixed bottom-0 left-0 right-0 z-20 border-t backdrop-blur-md"
+        style={{
+          background: "hsl(0 0% 4% / 0.8)",
+          borderColor: "hsl(24 100% 55% / 0.2)",
+        }}
+      >
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <RouterLink
+            to="/dashboard"
+            className="flex items-center gap-2 text-sm font-medium transition-colors"
+            style={{ color: "hsl(0 72% 51%)" }}
+          >
+            <X className="w-4 h-4" />
+            Descartar Edição
+          </RouterLink>
+
+          <p
+            className="hidden md:block text-xs text-center"
+            style={{ color: "hsl(0 0% 55%)" }}
+          >
+            Aprovar e Salvar para Galeria (Com Cortes de Podcast)
+          </p>
+
+          <button
+            className="flex items-center gap-2 px-5 py-3 rounded-lg text-xs md:text-sm font-bold tracking-wider transition-colors animate-pulse-glow"
+            style={{
+              background: "hsl(24 100% 50%)",
+              color: "hsl(0 0% 100%)",
+            }}
+          >
+            <Zap className="w-5 h-5" fill="currentColor" />
+            VALIDAR & SALVAR CORTES
+          </button>
+        </div>
+      </footer>
     </div>
   );
 };
