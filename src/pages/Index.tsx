@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import podcastHost from "@/assets/podcast-host.png";
 
 const Index = () => {
-  const navigate = useNavigate();
   const [clipCount, setClipCount] = useState([10]);
   const [podcastLink, setPodcastLink] = useState("");
 
