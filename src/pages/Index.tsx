@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Zap, Link } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Zap, Link, ArrowLeft } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import podcastHost from "@/assets/podcast-host.png";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [clipCount, setClipCount] = useState([10]);
   const [podcastLink, setPodcastLink] = useState("");
 
