@@ -162,6 +162,43 @@ const Index = () => {
           </div>
         </div>
       </main>
+      {/* Bottom bar */}
+      <footer
+        className="fixed bottom-0 left-0 right-0 z-20 border-t backdrop-blur-md"
+        style={{
+          background: "hsl(0 0% 4% / 0.8)",
+          borderColor: "hsl(24 100% 55% / 0.2)",
+        }}
+      >
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <RouterLink
+            to="/dashboard"
+            className="flex items-center gap-2 text-sm font-medium transition-colors"
+            style={{ color: "hsl(0 72% 51%)" }}
+          >
+            <X className="w-4 h-4" />
+            Descartar Edição
+          </RouterLink>
+
+          <p
+            className="hidden md:block text-xs text-center"
+            style={{ color: "hsl(0 0% 55%)" }}
+          >
+            Aprovar e Salvar para Galeria (Com Cortes de Podcast)
+          </p>
+
+          <button
+            className="flex items-center gap-2 px-5 py-3 rounded-lg text-xs md:text-sm font-bold tracking-wider transition-colors animate-pulse-glow"
+            style={{
+              background: "hsl(24 100% 50%)",
+              color: "hsl(0 0% 100%)",
+            }}
+          >
+            <Zap className="w-5 h-5" fill="currentColor" />
+            VALIDAR & SALVAR CORTES
+          </button>
+        </div>
+      </footer>
     </div>
   );
 };
