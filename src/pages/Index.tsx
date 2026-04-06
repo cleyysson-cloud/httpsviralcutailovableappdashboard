@@ -61,6 +61,20 @@ const Index = () => {
       </div>
 
       {/* Header */}
+      {/* Botão Voltar */}
+      <button
+        onClick={() => navigate("/dashboard")}
+        className="absolute top-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold tracking-wider uppercase transition-all hover:scale-105 active:scale-95"
+        style={{
+          background: "hsl(0 0% 12%)",
+          color: "hsl(24 100% 55%)",
+          border: "1px solid hsl(24 60% 25%)",
+        }}
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Voltar
+      </button>
+
       <header className="relative z-10 pt-8 pb-4 text-center">
         <h1 className="text-3xl md:text-4xl font-black tracking-wider" style={{ color: "hsl(24 100% 55%)" }}>
           VIRALCUT AI
