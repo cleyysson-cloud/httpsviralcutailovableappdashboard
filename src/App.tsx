@@ -10,6 +10,7 @@ import Financas from "./pages/Financas.tsx";
 import Fitness from "./pages/Fitness.tsx";
 import Gastronomia from "./pages/Gastronomia.tsx";
 import MotoAuto from "./pages/MotoAuto.tsx";
+import ModaBeleza from "./pages/ModaBeleza.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
