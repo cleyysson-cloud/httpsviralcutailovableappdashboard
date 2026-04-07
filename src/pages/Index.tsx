@@ -171,14 +171,14 @@ const Index = () => {
         }}
       >
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <RouterLink
-            to="/dashboard"
+          <button
+            onClick={() => window.location.href = "/"}
             className="flex items-center gap-2 text-sm font-medium transition-colors"
             style={{ color: "hsl(0 72% 51%)" }}
           >
             <X className="w-4 h-4" />
             Descartar Edição
-          </RouterLink>
+          </button>
 
           <p
             className="hidden md:block text-xs text-center"
