@@ -11,6 +11,7 @@ import Fitness from "./pages/Fitness.tsx";
 import Gastronomia from "./pages/Gastronomia.tsx";
 import MotoAuto from "./pages/MotoAuto.tsx";
 import ModaBeleza from "./pages/ModaBeleza.tsx";
+import Lifestyle from "./pages/Lifestyle.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/moto" element={<MotoAuto />} />
           <Route path="/editor" element={<Editor />} />
           <Route path="/moda-beleza" element={<ModaBeleza />} />
+          <Route path="/lifestyle" element={<Lifestyle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
